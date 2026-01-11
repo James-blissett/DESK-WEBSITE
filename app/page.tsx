@@ -141,74 +141,255 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
   return (
     <main className="min-h-screen bg-base-100">
       {/* Hero Section */}
-      <div className="hero bg-base-200 py-12 md:py-20">
+      <div className="hero min-h-[90vh] bg-gradient-to-br from-primary/10 via-base-200 to-secondary/10">
         <div className="hero-content text-center">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">{product.name}</h1>
-            <p className="text-lg md:text-xl opacity-80">Premium Standing Desk</p>
+          <div className="max-w-4xl">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              Premium Standing Desks.<br />
+              <span className="text-primary">No Middleman Markup.</span>
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-2xl mx-auto">
+              Dual motor, steel-framed standing desks shipped direct from the factory.
+              Be more comfortable and productive, without paying an arm and a leg.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-primary">{formattedPrice}</div>
+                <div className="text-sm opacity-60 line-through">$850 retail</div>
+              </div>
+              <div className="hidden sm:block text-2xl opacity-40">|</div>
+              <div className="text-center">
+                <div className="text-2xl font-semibold">Save $200</div>
+                <div className="text-sm opacity-60">Factory Direct</div>
+              </div>
+            </div>
+            <a href="#buy-now" className="btn btn-primary btn-lg">
+              Get Yours Now
+            </a>
           </div>
         </div>
       </div>
 
-      {/* Product Details Section */}
-      <div className="container mx-auto px-4 py-8 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Product Image Placeholder */}
-          <div className="card bg-base-200 shadow-xl">
-            <figure className="aspect-square">
-              <div className="w-full h-full bg-base-300 flex items-center justify-center">
-                <svg
-                  className="w-32 h-32 md:w-48 md:h-48 text-base-content opacity-20"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-              </div>
-            </figure>
+      {/* Product Features Section */}
+      <div className="py-16 md:py-24 bg-base-100">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Built to Last, Priced to Sell</h2>
+            <p className="text-lg md:text-xl opacity-70 max-w-2xl mx-auto">
+              No compromises on quality. Just honest pricing.
+            </p>
           </div>
 
-          {/* Product Details Card */}
-          <div className="card bg-base-100 shadow-xl">
-            <div className="card-body">
-              <div className="flex flex-wrap items-center gap-4 mb-4">
-                <h2 className="card-title text-3xl md:text-4xl">{product.name}</h2>
-                {isInStock ? (
-                  <div className="badge badge-success badge-lg">
-                    {product.stock_quantity} In Stock
-                  </div>
-                ) : (
-                  <div className="badge badge-error badge-lg">Sold Out</div>
-                )}
-              </div>
-
-              <div className="mb-6">
-                <p className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                  {formattedPrice}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Dual Motor */}
+            <div className="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="card-body items-center text-center">
+                <div className="w-16 h-16 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="card-title text-2xl">Dual Motor</h3>
+                <p className="opacity-80">
+                  Powerful dual-motor system for smooth, stable height adjustment. Lift up to 80kg with ease.
                 </p>
               </div>
+            </div>
 
-              {product.description && (
-                <div className="mb-6">
-                  <p className="text-base md:text-lg text-base-content opacity-80 leading-relaxed">
-                    {product.description}
+            {/* Steel Frame */}
+            <div className="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="card-body items-center text-center">
+                <div className="w-16 h-16 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <h3 className="card-title text-2xl">Steel Frame</h3>
+                <p className="opacity-80">
+                  Commercial-grade steel construction ensures stability and durability for years of daily use.
+                </p>
+              </div>
+            </div>
+
+            {/* Height Adjustable */}
+            <div className="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="card-body items-center text-center">
+                <div className="w-16 h-16 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                  </svg>
+                </div>
+                <h3 className="card-title text-2xl">Height Adjustable</h3>
+                <p className="opacity-80">
+                  Adjusts up to 1.18m (46.5"). Perfect for standing or sitting, whatever keeps you comfortable.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Why Buy From Me Section */}
+      <div className="py-16 md:py-24 bg-base-200">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">Why Buy From Me?</h2>
+            <div className="card bg-base-100 shadow-xl">
+              <div className="card-body">
+                <div className="space-y-6 text-lg">
+                  <div className="flex gap-4">
+                    <div className="text-2xl">💰</div>
+                    <div>
+                      <h3 className="font-bold text-xl mb-2">No Office Rent</h3>
+                      <p className="opacity-80">I'm just one guy running this from home. No expensive retail stores to pay for.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="text-2xl">👤</div>
+                    <div>
+                      <h3 className="font-bold text-xl mb-2">No Employees to Pay</h3>
+                      <p className="opacity-80">No sales teams, no managers, no overhead. Just me, keeping costs down.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="text-2xl">🏭</div>
+                    <div>
+                      <h3 className="font-bold text-xl mb-2">Factory Direct</h3>
+                      <p className="opacity-80">I import directly from the manufacturer in Guangzhou. No distributors, no wholesalers, no markup.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="text-2xl">✅</div>
+                    <div>
+                      <h3 className="font-bold text-xl mb-2">Just Manufacturing + Shipping</h3>
+                      <p className="opacity-80">The price you pay covers the cost to make it, ship it, and a small margin. That's it.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Why Am I Doing This Section */}
+      <div className="py-16 md:py-24 bg-base-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">Why Am I Doing This?</h2>
+            <div className="prose prose-lg max-w-none">
+              <div className="card bg-gradient-to-br from-error/10 to-warning/10 shadow-xl">
+                <div className="card-body">
+                  <p className="text-lg md:text-xl leading-relaxed mb-4">
+                    I'm frustrated. Really frustrated.
+                  </p>
+                  <p className="text-lg md:text-xl leading-relaxed mb-4">
+                    Over the past 5 years, prices in Australia have been climbing for <strong>no good reason</strong>.
+                    Standing desks that should cost $650 are being sold for $850, $950, even over $1000.
+                  </p>
+                  <p className="text-lg md:text-xl leading-relaxed mb-4">
+                    But here's the thing: <strong className="text-primary">the cost to buy these desks from factories in China
+                    is almost the same as it was 5 years ago</strong>. The only difference? More middlemen taking bigger cuts.
+                  </p>
+                  <p className="text-lg md:text-xl leading-relaxed mb-4">
+                    Distributors. Wholesalers. Retailers. Marketing agencies. They're all adding their margin on top,
+                    and you're the one paying for it.
+                  </p>
+                  <div className="bg-base-100 p-6 rounded-lg my-6">
+                    <p className="text-xl md:text-2xl font-bold text-center mb-2">
+                      This really pisses me off.
+                    </p>
+                    <p className="text-lg text-center opacity-80">
+                      So I bought a shipment of desks straight from the factory in Guangzhou.
+                    </p>
+                  </div>
+                  <p className="text-lg md:text-xl leading-relaxed">
+                    I'm cutting out all the middleman BS. No inflated margins. No retail markup.
+                    Just a quality product at a fair price. The way it should be.
                   </p>
                 </div>
-              )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-              <CheckoutForm product={product} />
+      {/* Product Details & Checkout Section */}
+      <div id="buy-now" className="py-16 md:py-24 bg-base-200">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">Ready to Upgrade Your Workspace?</h2>
 
-              <div className="mt-4 pt-4 border-t border-base-300">
-                <div className="flex justify-between items-center text-sm">
-                  <span className="text-base-content opacity-60">Stock Quantity:</span>
-                  <span className="font-semibold">{product.stock_quantity} units</span>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Product Image Placeholder */}
+              <div className="card bg-base-100 shadow-xl">
+                <figure className="aspect-square">
+                  <div className="w-full h-full bg-base-300 flex items-center justify-center">
+                    <svg
+                      className="w-32 h-32 md:w-48 md:h-48 text-base-content opacity-20"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </div>
+                </figure>
+              </div>
+
+              {/* Checkout Card */}
+              <div className="card bg-base-100 shadow-xl">
+                <div className="card-body">
+                  <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+                    <h3 className="text-3xl md:text-4xl font-bold">{product.name}</h3>
+                    {isInStock ? (
+                      <div className="badge badge-success badge-lg gap-2">
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        {product.stock_quantity} In Stock
+                      </div>
+                    ) : (
+                      <div className="badge badge-error badge-lg">Sold Out</div>
+                    )}
+                  </div>
+
+                  <div className="mb-6">
+                    <div className="flex items-baseline gap-3">
+                      <p className="text-5xl md:text-6xl font-bold text-primary">
+                        {formattedPrice}
+                      </p>
+                      <span className="text-2xl opacity-60 line-through">$850</span>
+                    </div>
+                    <p className="text-sm mt-2 opacity-70">Save $200 on retail price</p>
+                  </div>
+
+                  {product.description && (
+                    <div className="mb-6 p-4 bg-base-200 rounded-lg">
+                      <p className="text-base leading-relaxed opacity-90">
+                        {product.description}
+                      </p>
+                    </div>
+                  )}
+
+                  <div className="divider">Secure Checkout</div>
+
+                  <CheckoutForm product={product} />
+
+                  <div className="mt-6 pt-6 border-t border-base-300">
+                    <div className="flex items-center justify-center gap-4 text-sm opacity-60">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                      </svg>
+                      <span>Secure payment powered by Stripe</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
