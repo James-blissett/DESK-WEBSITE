@@ -1,3 +1,118 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Studio Ghibli Inspired Styles */
+@layer base {
+  body {
+    @apply bg-base-100 text-neutral;
+  }
+}
+
+@layer components {
+  /* Soft, organic shadows like watercolor paintings */
+  .ghibli-shadow {
+    box-shadow: 0 4px 20px rgba(123, 160, 91, 0.15), 0 2px 8px rgba(92, 107, 115, 0.1);
+  }
+
+  .ghibli-shadow-lg {
+    box-shadow: 0 10px 40px rgba(123, 160, 91, 0.2), 0 4px 15px rgba(92, 107, 115, 0.12);
+  }
+
+  /* Whimsical hover effect */
+  .ghibli-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .ghibli-hover:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(123, 160, 91, 0.25), 0 6px 18px rgba(92, 107, 115, 0.15);
+  }
+
+  /* Organic card style */
+  .ghibli-card {
+    @apply rounded-3xl bg-base-100 ghibli-shadow overflow-hidden;
+  }
+
+  /* Gradient backgrounds inspired by Ghibli skies */
+  .ghibli-sky {
+    background: linear-gradient(135deg,
+      #89b4d4 0%,
+      #b8d4e8 50%,
+      #e8a87c 100%
+    );
+  }
+
+  .ghibli-meadow {
+    background: linear-gradient(to bottom,
+      #88c057 0%,
+      #7ba05b 50%,
+      #6b8e4e 100%
+    );
+  }
+
+  .ghibli-sunset {
+    background: linear-gradient(135deg,
+      #f5c26b 0%,
+      #e8a87c 50%,
+      #f4a5a5 100%
+    );
+  }
+
+  /* Floating animation like Ghibli clouds */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .ghibli-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Gentle pulse animation */
+  @keyframes gentle-pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.85;
+      transform: scale(1.03);
+    }
+  }
+
+  .ghibli-pulse {
+    animation: gentle-pulse 4s ease-in-out infinite;
+  }
+
+  /* Organic button styles */
+  .btn-ghibli {
+    @apply btn rounded-full font-semibold shadow-lg;
+    @apply transition-all duration-300;
+  }
+
+  .btn-ghibli:hover {
+    @apply shadow-xl;
+    transform: translateY(-2px) scale(1.05);
+  }
+}
+
+@layer utilities {
+  /* Text shadow for depth */
+  .text-ghibli-shadow {
+    text-shadow: 2px 2px 4px rgba(92, 107, 115, 0.15);
+  }
+
+  /* Organic border radius */
+  .rounded-organic {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+
+  .rounded-organic-alt {
+    border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+  }
+}
