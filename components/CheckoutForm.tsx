@@ -73,10 +73,10 @@ export default function CheckoutForm({ product }: CheckoutFormProps) {
 
   return (
     <div className="mt-6">
-      <h3 className="text-xl font-semibold mb-4">Checkout</h3>
-      
+      <h3 className="text-xl font-semibold mb-4 text-ghibli-forest font-serif">Checkout</h3>
+
       {error && (
-        <div className="alert alert-error mb-4">
+        <div className="alert alert-error mb-4 rounded-full">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="stroke-current shrink-0 h-6 w-6"
@@ -97,12 +97,12 @@ export default function CheckoutForm({ product }: CheckoutFormProps) {
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="form-control">
           <label className="label" htmlFor="customer_name">
-            <span className="label-text">Name</span>
+            <span className="label-text text-ghibli-forest font-serif">Name</span>
           </label>
           <input
             type="text"
             id="customer_name"
-            className="input input-bordered"
+            className="input input-bordered rounded-full bg-white border-ghibli-grass border-opacity-30 focus:border-ghibli-grass"
             value={customerName}
             onChange={(e) => setCustomerName(e.target.value)}
             disabled={!isInStock || isLoading}
@@ -112,12 +112,12 @@ export default function CheckoutForm({ product }: CheckoutFormProps) {
 
         <div className="form-control">
           <label className="label" htmlFor="customer_email">
-            <span className="label-text">Email</span>
+            <span className="label-text text-ghibli-forest font-serif">Email</span>
           </label>
           <input
             type="email"
             id="customer_email"
-            className="input input-bordered"
+            className="input input-bordered rounded-full bg-white border-ghibli-grass border-opacity-30 focus:border-ghibli-grass"
             value={customerEmail}
             onChange={(e) => setCustomerEmail(e.target.value)}
             disabled={!isInStock || isLoading}
@@ -127,11 +127,11 @@ export default function CheckoutForm({ product }: CheckoutFormProps) {
 
         <div className="form-control">
           <label className="label" htmlFor="shipping_address">
-            <span className="label-text">Shipping Address</span>
+            <span className="label-text text-ghibli-forest font-serif">Shipping Address</span>
           </label>
           <textarea
             id="shipping_address"
-            className="textarea textarea-bordered h-24"
+            className="textarea textarea-bordered h-24 rounded-3xl bg-white border-ghibli-grass border-opacity-30 focus:border-ghibli-grass"
             value={shippingAddress}
             onChange={(e) => setShippingAddress(e.target.value)}
             disabled={!isInStock || isLoading}
@@ -142,7 +142,7 @@ export default function CheckoutForm({ product }: CheckoutFormProps) {
         <div className="form-control mt-6">
           <button
             type="submit"
-            className={`btn btn-primary btn-lg w-full ${
+            className={`ghibli-btn btn btn-lg w-full text-white font-semibold ${
               isLoading ? 'loading' : ''
             } ${!isInStock ? 'btn-disabled' : ''}`}
             disabled={!isInStock || isLoading}

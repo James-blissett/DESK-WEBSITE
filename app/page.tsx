@@ -79,16 +79,16 @@ async function getProduct(): Promise<{ product: Product | null; error?: string }
 function ProductDisplay({ product, error }: { product: Product | null; error?: string }) {
   if (error) {
     return (
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen bg-ghibli-cream">
         <div className="hero-content text-center">
-          <div className="max-w-md">
-            <div className="alert alert-error mb-4">
+          <div className="max-w-md ghibli-card p-8">
+            <div className="alert alert-error mb-4 rounded-full">
               <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span>Configuration Error</span>
             </div>
-            <h1 className="text-3xl font-bold mb-4">Setup Required</h1>
+            <h1 className="text-3xl font-bold mb-4 text-ghibli-forest">Setup Required</h1>
             <p className="py-4 text-left">
               {error.includes('Missing Supabase') || error.includes('placeholder') ? (
                 <>
@@ -120,12 +120,12 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
 
   if (!product) {
     return (
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen bg-ghibli-cream">
         <div className="hero-content text-center">
-          <div className="max-w-md">
-            <h1 className="text-5xl font-bold">No Products Available</h1>
-            <p className="py-6">We're currently out of stock. Please check back later.</p>
-            <p className="text-sm text-base-content opacity-60">Or add products to your Supabase database.</p>
+          <div className="max-w-md ghibli-card p-8">
+            <h1 className="text-5xl font-bold text-ghibli-forest mb-4">No Products Available</h1>
+            <p className="py-6 text-ghibli-forest opacity-90 font-serif">We're currently out of stock. Please check back later.</p>
+            <p className="text-sm text-ghibli-forest opacity-60 font-serif">Or add products to your Supabase database.</p>
           </div>
         </div>
       </div>
@@ -139,13 +139,17 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
   }).format(product.price)
 
   return (
-    <main className="min-h-screen bg-base-100">
+    <main className="min-h-screen bg-ghibli-cream">
       {/* Hero Section */}
-      <div className="hero bg-base-200 py-12 md:py-20">
-        <div className="hero-content text-center">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">{product.name}</h1>
-            <p className="text-lg md:text-xl opacity-80">Premium Standing Desk</p>
+      <div className="ghibli-hero hero min-h-[60vh] py-20 md:py-32">
+        <div className="hero-content text-center ghibli-hero-content">
+          <div className="max-w-4xl px-4">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-ghibli-forest ghibli-text-shadow leading-tight">
+              Finally a premium standing desk that won't cost an arm and a leg
+            </h1>
+            <p className="text-xl md:text-2xl text-ghibli-forest opacity-90 font-serif">
+              Discover the perfect blend of quality and affordability
+            </p>
           </div>
         </div>
       </div>
@@ -154,11 +158,11 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
       <div className="container mx-auto px-4 py-8 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Product Image Placeholder */}
-          <div className="card bg-base-200 shadow-xl">
-            <figure className="aspect-square">
-              <div className="w-full h-full bg-base-300 flex items-center justify-center">
+          <div className="ghibli-card ghibli-floating">
+            <figure className="aspect-square overflow-hidden">
+              <div className="w-full h-full bg-gradient-to-br from-ghibli-sky to-ghibli-cloud flex items-center justify-center">
                 <svg
-                  className="w-32 h-32 md:w-48 md:h-48 text-base-content opacity-20"
+                  className="w-32 h-32 md:w-48 md:h-48 text-ghibli-forest opacity-30"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -176,28 +180,28 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
           </div>
 
           {/* Product Details Card */}
-          <div className="card bg-base-100 shadow-xl">
-            <div className="card-body">
-              <div className="flex flex-wrap items-center gap-4 mb-4">
-                <h2 className="card-title text-3xl md:text-4xl">{product.name}</h2>
+          <div className="ghibli-card">
+            <div className="card-body p-8">
+              <div className="flex flex-wrap items-center gap-4 mb-6">
+                <h2 className="card-title text-3xl md:text-4xl text-ghibli-forest font-bold">{product.name}</h2>
                 {isInStock ? (
-                  <div className="badge badge-success badge-lg">
+                  <div className="ghibli-badge px-4 py-2 text-white font-semibold">
                     {product.stock_quantity} In Stock
                   </div>
                 ) : (
-                  <div className="badge badge-error badge-lg">Sold Out</div>
+                  <div className="badge badge-error badge-lg rounded-full">Sold Out</div>
                 )}
               </div>
 
               <div className="mb-6">
-                <p className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                <p className="text-4xl md:text-5xl font-bold text-ghibli-grass mb-2">
                   {formattedPrice}
                 </p>
               </div>
 
               {product.description && (
                 <div className="mb-6">
-                  <p className="text-base md:text-lg text-base-content opacity-80 leading-relaxed">
+                  <p className="text-base md:text-lg text-ghibli-forest opacity-90 leading-relaxed font-serif">
                     {product.description}
                   </p>
                 </div>
@@ -205,10 +209,10 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
 
               <CheckoutForm product={product} />
 
-              <div className="mt-4 pt-4 border-t border-base-300">
+              <div className="mt-6 pt-6 border-t-2 border-ghibli-grass border-opacity-20">
                 <div className="flex justify-between items-center text-sm">
-                  <span className="text-base-content opacity-60">Stock Quantity:</span>
-                  <span className="font-semibold">{product.stock_quantity} units</span>
+                  <span className="text-ghibli-forest opacity-70 font-serif">Stock Quantity:</span>
+                  <span className="font-bold text-ghibli-forest">{product.stock_quantity} units</span>
                 </div>
               </div>
             </div>

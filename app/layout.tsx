@@ -6,8 +6,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Standing Desk Store',
-  description: 'Premium standing desks for your workspace',
+  title: 'Finally a premium standing desk that won\'t cost an arm and a leg',
+  description: 'Discover the perfect standing desk that combines premium quality with affordability',
 }
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en" data-theme="ghibli">
       <body className={inter.className}>{children}</body>
     </html>
   )
