@@ -152,11 +152,10 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
         <div className="hero-content text-center relative z-10">
           <div className="max-w-4xl">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-ghibli-shadow text-neutral">
-              Premium Standing Desks.<br />
-              <span className="text-primary drop-shadow-lg">No Middleman Markup.</span>
+              Finally, a premium standing desk that won't cost an arm and a leg.<br />
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-neutral/90 max-w-2xl mx-auto leading-relaxed">
-              Dual motor, steel-framed standing desks shipped direct from the factory.
+              Dual motor, steel-framed standing desks.
               Be more comfortable and productive, without paying an arm and a leg.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-10">
@@ -207,7 +206,7 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
                 </div>
                 <h3 className="text-2xl font-bold mb-3 text-primary">Dual Motor</h3>
                 <p className="text-neutral/80 leading-relaxed">
-                  Powerful dual-motor system for smooth, stable height adjustment. Lift up to 80kg with ease.
+                  Powerful dual-motor system for smooth, stable height adjustment. Lift up to 30kg with ease.
                 </p>
               </div>
             </div>
