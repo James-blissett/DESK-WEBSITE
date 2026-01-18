@@ -10,13 +10,13 @@
 }
 
 @layer components {
-  /* Soft, organic shadows like watercolor paintings */
+  /* Soft, organic shadows like watercolor paintings with warm tones */
   .ghibli-shadow {
-    box-shadow: 0 4px 20px rgba(123, 160, 91, 0.15), 0 2px 8px rgba(92, 107, 115, 0.1);
+    box-shadow: 0 4px 20px rgba(212, 132, 62, 0.15), 0 2px 8px rgba(139, 111, 71, 0.1);
   }
 
   .ghibli-shadow-lg {
-    box-shadow: 0 10px 40px rgba(123, 160, 91, 0.2), 0 4px 15px rgba(92, 107, 115, 0.12);
+    box-shadow: 0 10px 40px rgba(212, 132, 62, 0.2), 0 4px 15px rgba(139, 111, 71, 0.12);
   }
 
   /* Whimsical hover effect */
@@ -26,7 +26,7 @@
 
   .ghibli-hover:hover {
     transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 12px 35px rgba(123, 160, 91, 0.25), 0 6px 18px rgba(92, 107, 115, 0.15);
+    box-shadow: 0 12px 35px rgba(212, 132, 62, 0.25), 0 6px 18px rgba(139, 111, 71, 0.15);
   }
 
   /* Organic card style */
@@ -34,28 +34,29 @@
     @apply rounded-3xl bg-base-100 ghibli-shadow overflow-hidden;
   }
 
-  /* Gradient backgrounds inspired by Ghibli skies */
+  /* Gradient backgrounds inspired by Ghibli skies and warm workspace */
   .ghibli-sky {
     background: linear-gradient(135deg,
-      #89b4d4 0%,
-      #b8d4e8 50%,
-      #e8a87c 100%
+      #E5D4B5 0%,
+      #F5E0C3 30%,
+      #E8C592 70%,
+      #D4A574 100%
     );
   }
 
   .ghibli-meadow {
     background: linear-gradient(to bottom,
-      #88c057 0%,
-      #7ba05b 50%,
-      #6b8e4e 100%
+      #A8B88A 0%,
+      #8FA86F 50%,
+      #7A9360 100%
     );
   }
 
   .ghibli-sunset {
     background: linear-gradient(135deg,
-      #f5c26b 0%,
-      #e8a87c 50%,
-      #f4a5a5 100%
+      #F5D9A8 0%,
+      #E8B87C 50%,
+      #D89A6A 100%
     );
   }
 
@@ -102,9 +103,9 @@
 }
 
 @layer utilities {
-  /* Text shadow for depth */
+  /* Text shadow for depth with warm tones */
   .text-ghibli-shadow {
-    text-shadow: 2px 2px 4px rgba(92, 107, 115, 0.15);
+    text-shadow: 2px 2px 4px rgba(139, 111, 71, 0.2);
   }
 
   /* Organic border radius */

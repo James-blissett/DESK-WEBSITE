@@ -159,6 +159,22 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
               Dual motor, steel-framed standing desks shipped direct from the factory.
               Be more comfortable and productive, without paying an arm and a leg.
             </p>
+
+            {/* Studio Ghibli Desk Image */}
+            <div className="relative w-full max-w-4xl mx-auto mb-10 px-4">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                {/* Fade overlay for blending into background */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#E5D4B5]/40 pointer-events-none z-10"></div>
+                <img
+                  src="/desk-studio-ghibli.jpg"
+                  alt="Studio Ghibli style standing desk workspace"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              {/* Additional fade effect at bottom */}
+              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#E5D4B5] to-transparent pointer-events-none"></div>
+            </div>
+
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-10">
               <div className="text-center p-6 bg-white/70 rounded-3xl ghibli-shadow backdrop-blur-sm">
                 <div className="text-4xl md:text-5xl font-bold text-primary">{formattedPrice}</div>
