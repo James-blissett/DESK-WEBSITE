@@ -103,7 +103,7 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
                     <ol className="list-decimal list-inside space-y-1">
                       <li>Go to your Supabase project dashboard</li>
                       <li>Navigate to Settings → API</li>
-                      <li>Copy the "Project URL" and "anon public" key</li>
+                      <li>Copy the &quot;Project URL&quot; and &quot;anon public&quot; key</li>
                       <li>Paste them into your <code>.env.local</code> file</li>
                       <li>Restart the dev server (Ctrl+C then npm run dev)</li>
                     </ol>
@@ -127,7 +127,7 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
         <div className="hero-content text-center">
           <div className="max-w-md ghibli-card p-10">
             <h1 className="text-5xl font-bold text-deep-charcoal text-ghibli-shadow mb-6">No Products Available</h1>
-            <p className="text-lg text-deep-charcoal/80 mb-4">We're currently out of stock. Please check back later.</p>
+            <p className="text-lg text-deep-charcoal/80 mb-4">We&apos;re currently out of stock. Please check back later.</p>
             <p className="text-sm text-deep-charcoal/60">Or add products to your Supabase database.</p>
           </div>
         </div>
@@ -290,7 +290,7 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
                 </div>
                 <h3 className="text-2xl font-bold mb-3 text-sky-blue">Height Adjustable</h3>
                 <p className="text-deep-charcoal/80 leading-relaxed">
-                  Adjusts up to 1.18m (46.5"). Perfect for standing or sitting, whatever keeps you comfortable.
+                  Adjusts up to 1.18m (46.5&quot;). Perfect for standing or sitting, whatever keeps you comfortable.
                 </p>
               </div>
             </div>
@@ -316,19 +316,19 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
               <div className="ghibli-card overflow-hidden">
                 <div className="bg-gradient-to-br from-terracotta/20 via-warm-honey/15 to-deep-charcoal/20 p-8 md:p-12">
                   <p className="text-xl md:text-2xl leading-relaxed mb-6 text-deep-charcoal font-medium">
-                    I'm frustrated. Really frustrated.
+                    I&apos;m frustrated. Really frustrated.
                   </p>
                   <p className="text-lg md:text-xl leading-relaxed mb-6 text-deep-charcoal/90">
                     Over the past 5 years, prices in Australia have been climbing for <strong className="text-terracotta">no good reason</strong>.
                     Standing desks that should cost $650 are being sold for $850, $950, even over $1000.
                   </p>
                   <p className="text-lg md:text-xl leading-relaxed mb-6 text-deep-charcoal/90">
-                    But here's the thing: <strong className="text-warm-honey">the cost to buy these desks from factories in China
+                    But here&apos;s the thing: <strong className="text-warm-honey">the cost to buy these desks from factories in China
                     is almost the same as it was 5 years ago</strong>. The only difference? More middlemen taking bigger cuts.
                   </p>
                   <p className="text-lg md:text-xl leading-relaxed mb-6 text-deep-charcoal/90">
-                    Distributors. Wholesalers. Retailers. Marketing agencies. They're all adding their margin on top,
-                    and you're the one paying for it.
+                    Distributors. Wholesalers. Retailers. Marketing agencies. They&apos;re all adding their margin on top,
+                    and you&apos;re the one paying for it.
                   </p>
                   <div className="bg-soft-cream p-8 rounded-3xl my-8 ghibli-shadow-lg">
                     <p className="text-2xl md:text-3xl font-bold text-center mb-4 text-terracotta">
@@ -339,7 +339,7 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
                     </p>
                   </div>
                   <p className="text-lg md:text-xl leading-relaxed text-deep-charcoal/90">
-                    I'm cutting out all the middleman BS. No insane margins. No retail markup.
+                    I&apos;m cutting out all the middleman BS. No insane margins. No retail markup.
                     Just a quality product at a fair price. The way it should be.
                   </p>
                 </div>
@@ -467,7 +467,7 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
                   <div className="text-4xl w-16 h-16 flex items-center justify-center bg-warm-honey/20 rounded-full flex-shrink-0">💰</div>
                   <div>
                     <h3 className="font-bold text-2xl mb-3 text-warm-honey">No Office Rent</h3>
-                    <p className="text-deep-charcoal/80 leading-relaxed">I'm just one guy running this from home. No expensive retail stores to pay for.</p>
+                    <p className="text-deep-charcoal/80 leading-relaxed">I&apos;m just one guy running this from home. No expensive retail stores to pay for.</p>
                   </div>
                 </div>
                 <div className="divider section-divider"></div>
@@ -483,7 +483,7 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
                   <div className="text-4xl w-16 h-16 flex items-center justify-center bg-warm-honey/20 rounded-full flex-shrink-0">✅</div>
                   <div>
                     <h3 className="font-bold text-2xl mb-3 text-deep-charcoal">Just Manufacturing + Shipping</h3>
-                    <p className="text-deep-charcoal/80 leading-relaxed">The price you pay covers the cost to make it, ship it, and a small margin. That's it.</p>
+                    <p className="text-deep-charcoal/80 leading-relaxed">The price you pay covers the cost to make it, ship it, and a small margin. That&apos;s it.</p>
                   </div>
                 </div>
               </div>
@@ -504,7 +504,7 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
               {/* Text Field on Left */}
               <div className="ghibli-card p-8">
                 <p className="text-base md:text-lg text-deep-charcoal/80 leading-relaxed">
-                Noxcraft, literally meaning "night work" or "night craft," represents the act of working late into the night on that one thing that drives you, excites you, and brings you back to your desk day after day.
+                Noxcraft, literally meaning &quot;night work&quot; or &quot;night craft,&quot; represents the act of working late into the night on that one thing that drives you, excites you, and brings you back to your desk day after day.
                 The desk is a special place—a place of execution where all your aspirations and goals are laid bare and either brought to life or forgotten. With Noxcraft standing desks, we hope to give you the capacity and comfort to achieve the greatest things you can imagine.
                 </p>
               </div>
