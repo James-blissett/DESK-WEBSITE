@@ -5,18 +5,22 @@
 /* Studio Ghibli Inspired Styles */
 @layer base {
   body {
-    @apply bg-base-100 text-neutral;
+    @apply bg-soft-cream text-deep-charcoal;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-deep-charcoal;
   }
 }
 
 @layer components {
   /* Soft, organic shadows like watercolor paintings with warm tones */
   .ghibli-shadow {
-    box-shadow: 0 4px 20px rgba(212, 132, 62, 0.15), 0 2px 8px rgba(139, 111, 71, 0.1);
+    box-shadow: 0 4px 20px rgba(232, 164, 69, 0.15), 0 2px 8px rgba(44, 44, 44, 0.1);
   }
 
   .ghibli-shadow-lg {
-    box-shadow: 0 10px 40px rgba(212, 132, 62, 0.2), 0 4px 15px rgba(139, 111, 71, 0.12);
+    box-shadow: 0 10px 40px rgba(232, 164, 69, 0.2), 0 4px 15px rgba(44, 44, 44, 0.12);
   }
 
   /* Whimsical hover effect */
@@ -26,12 +30,12 @@
 
   .ghibli-hover:hover {
     transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 12px 35px rgba(212, 132, 62, 0.25), 0 6px 18px rgba(139, 111, 71, 0.15);
+    box-shadow: 0 12px 35px rgba(232, 164, 69, 0.25), 0 6px 18px rgba(44, 44, 44, 0.15);
   }
 
   /* Organic card style */
   .ghibli-card {
-    @apply rounded-3xl bg-base-100 ghibli-shadow overflow-hidden;
+    @apply rounded-3xl bg-soft-cream ghibli-shadow overflow-hidden;
   }
 
   /* Gradient backgrounds inspired by Ghibli skies and warm workspace */
@@ -92,7 +96,7 @@
 
   /* Organic button styles */
   .btn-ghibli {
-    @apply btn rounded-full font-semibold shadow-lg;
+    @apply rounded-full font-semibold shadow-lg;
     @apply transition-all duration-300;
   }
 
@@ -105,7 +109,52 @@
 @layer utilities {
   /* Text shadow for depth with warm tones */
   .text-ghibli-shadow {
-    text-shadow: 2px 2px 4px rgba(139, 111, 71, 0.2);
+    text-shadow: 2px 2px 4px rgba(44, 44, 44, 0.2);
+  }
+  
+  /* Navigation link hover states */
+  a:hover {
+    @apply text-warm-honey transition-colors duration-200;
+  }
+  
+  /* Price highlight styling */
+  .price-highlight {
+    @apply text-warm-honey font-bold;
+  }
+  
+  /* Badge styling for limited stock, featured, etc. */
+  .badge-primary-custom {
+    @apply bg-warm-honey text-white border-warm-honey;
+  }
+  
+  /* Section divider accents */
+  .section-divider {
+    @apply border-warm-honey/30;
+  }
+  
+  /* Success message styling */
+  .success-message {
+    @apply bg-sage-green/20 text-sage-green border-sage-green/40;
+  }
+  
+  /* Urgency/alert styling */
+  .urgency-alert {
+    @apply bg-terracotta/20 text-terracotta border-terracotta/40;
+  }
+  
+  /* Info message styling */
+  .info-message {
+    @apply bg-sky-blue/20 text-sky-blue border-sky-blue/40;
+  }
+  
+  /* Link styling */
+  .text-link {
+    @apply text-sky-blue hover:text-warm-honey underline;
+  }
+  
+  /* Form active state */
+  input:focus, textarea:focus, select:focus {
+    @apply border-warm-honey ring-warm-honey/20;
   }
 
   /* Organic border radius */
