@@ -323,7 +323,7 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
                     Standing desks that should cost $650 are being sold for $850, $950, even over $1000.
                   </p>
                   <p className="text-lg md:text-xl leading-relaxed mb-6 text-deep-charcoal/90">
-                    But here&apos;s the thing: <strong className="text-warm-honey">the cost to buy these desks from factories in China
+                    But here&apos;s the thing: <strong className="text-warm-honey">the cost to buy the raw materials and manufacture these desks
                     is almost the same as it was 5 years ago</strong>. The only difference? More middlemen taking bigger cuts.
                   </p>
                   <p className="text-lg md:text-xl leading-relaxed mb-6 text-deep-charcoal/90">
@@ -419,7 +419,7 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
                   <div className="mt-8 pt-6 border-t border-charcoal-light">
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                       <p className="text-base md:text-lg text-deep-charcoal/80 text-center sm:text-left">
-                        Want to buy 4 or more? Contact us to discuss bulk discount pricing
+                        Want to buy 4 or more? Contact us and get $50 off each desk!
                       </p>
                       <a 
                         href="#contact-us" 
