@@ -2,16 +2,8 @@
 
 import { useEffect } from 'react'
 import Script from 'next/script'
-
-declare global {
-  interface Window {
-    fbq: (
-      action: 'init' | 'track',
-      event: string,
-      params?: Record<string, any>
-    ) => void
-  }
-}
+// Import the global Window type declaration from meta-pixel.ts
+import '@/lib/meta-pixel'
 
 export default function MetaPixel() {
   const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID
@@ -66,6 +58,7 @@ export default function MetaPixel() {
         }}
       />
       <noscript>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           height="1"
           width="1"
