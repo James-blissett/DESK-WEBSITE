@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react'
 import type { Product } from '@/types/database'
+import { trackInitiateCheckout } from '@/lib/meta-pixel'
 
 interface CheckoutFormProps {
   product: Product
@@ -37,6 +38,14 @@ export default function CheckoutForm({ product }: CheckoutFormProps) {
       setError('Please enter a valid email address')
       return
     }
+
+    // Track InitiateCheckout event for Meta Pixel
+    trackInitiateCheckout({
+      content_name: product.name,
+      content_ids: [product.id.toString()],
+      value: product.price,
+      currency: 'AUD',
+    })
 
     setIsLoading(true)
 

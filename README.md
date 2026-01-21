@@ -37,6 +37,7 @@ cp .env.local.example .env.local
    - `STRIPE_SECRET_KEY` - Needed for payment processing
    - `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` - Needed for payment processing
    - `RESEND_API_KEY` - Needed for sending transactional emails
+   - `NEXT_PUBLIC_META_PIXEL_ID` - Your Meta Pixel ID for Facebook/Meta advertising tracking (e.g., `984883318036668`)
    
    **Note about Supabase keys:** The `anon` key is safe to use in client-side code and respects Row-Level Security (RLS). The `service_role` key bypasses all RLS policies and should ONLY be used server-side for admin operations.
 
