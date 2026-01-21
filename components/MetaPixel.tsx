@@ -16,20 +16,15 @@ export default function MetaPixel() {
 
     // Initialize fbq if it doesn't exist
     if (typeof window !== 'undefined' && !window.fbq) {
-      window.fbq = function() {
-        // @ts-ignore
-        window.fbq.callMethod
-          ? window.fbq.callMethod.apply(window.fbq, arguments)
-          : window.fbq.queue.push(arguments)
+      // Use a local fbq reference to avoid optional chaining issues
+      const fbq: any = function (...args: any[]) {
+        fbq.callMethod ? fbq.callMethod.apply(fbq, args) : fbq.queue.push(args)
       }
-      // @ts-ignore
-      window.fbq.push = window.fbq
-      // @ts-ignore
-      window.fbq.loaded = true
-      // @ts-ignore
-      window.fbq.version = '2.0'
-      // @ts-ignore
-      window.fbq.queue = []
+      fbq.push = fbq
+      fbq.loaded = true
+      fbq.version = '2.0'
+      fbq.queue = []
+      window.fbq = fbq
     }
   }, [pixelId])
 
