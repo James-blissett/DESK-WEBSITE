@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import MetaPixel from '@/components/MetaPixel'
 import { Analytics } from '@vercel/analytics/react'
+import { CartProvider } from '@/contexts/CartContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,9 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="ghibli">
       <body className={inter.className}>
-        <MetaPixel />
-        {children}
-        <Analytics />
+        <CartProvider>
+          <MetaPixel />
+          {children}
+          <Analytics />
+        </CartProvider>
       </body>
     </html>
   )

@@ -11,6 +11,8 @@ import type { Product } from '@/types/database'
 import LoadingSpinner from '@/components/LoadingSpinner'
 import CheckoutForm from '@/components/CheckoutForm'
 import ProductImageCarousel from '@/components/ProductImageCarousel'
+import CartIcon from '@/components/CartIcon'
+import AddToCartButton from '@/components/AddToCartButton'
 import { Suspense } from 'react'
 
 async function getProduct(): Promise<{ product: Product | null; error?: string }> {
@@ -150,12 +152,15 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
             <h2 className="text-2xl md:text-3xl font-bold text-white">
               NOXCRAFT
             </h2>
-            <a 
-              href="#buy-now" 
-              className="absolute right-4 btn btn-sm md:btn-md btn-ghibli text-white bg-deep-charcoal/80 hover:bg-deep-charcoal border-deep-charcoal/60 px-4 md:px-6"
-            >
-              Level Up
-            </a>
+            <div className="absolute right-4 flex items-center gap-3">
+              <a 
+                href="#buy-now" 
+                className="btn btn-sm md:btn-md btn-ghibli text-white bg-deep-charcoal/80 hover:bg-deep-charcoal border-deep-charcoal/60 px-4 md:px-6"
+              >
+                Level Up
+              </a>
+              <CartIcon />
+            </div>
           </div>
         </div>
       </div>
@@ -407,7 +412,14 @@ function ProductDisplay({ product, error }: { product: Product | null; error?: s
                     </div>
                   )}
 
-                  <div className="divider text-deep-charcoal/60 section-divider">Secure Checkout</div>
+                  <div className="divider text-deep-charcoal/60 section-divider">Add to Cart or Checkout</div>
+
+                  {/* Add to Cart Button */}
+                  <div className="mb-6">
+                    <AddToCartButton product={product} />
+                  </div>
+
+                  <div className="divider text-deep-charcoal/60 section-divider">Or Checkout Directly</div>
 
                   <h3 className="text-xl md:text-2xl font-semibold text-deep-charcoal mb-6 text-center">
                     Enter your name and address
