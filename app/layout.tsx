@@ -8,7 +8,7 @@ import { Analytics } from '@vercel/analytics/react'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Standing Desk Store - Natural & Whimsical',
+  title: 'Noxcraft Standing Desks',
   description: 'Premium standing desks inspired by nature, delivered with care',
 }
 
